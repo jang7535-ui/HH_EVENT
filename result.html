@@ -4,37 +4,53 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>헥토헬스케어 이벤트 추첨 | 결과 확인</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="result-body">
-  <main class="wrap narrow">
-    <header class="hero center">
-      <div class="brandmark">H</div>
-      <div>
-        <p class="eyebrow">RESULT PAGE</p>
-        <h1 id="eventTitle">헥토헬스케어 이벤트 추첨</h1>
-        <p class="desc">본인 이름을 입력한 뒤 결과를 확인하세요.</p>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">🎁</div>
+        <div>
+          <div class="eyebrow">RESULT PAGE</div>
+          <h1 id="pageTitle">헥토헬스케어 이벤트 추첨</h1>
+          <p class="desc">본인 이름을 입력하면 당첨 여부를 확인할 수 있습니다.</p>
+        </div>
       </div>
     </header>
 
-    <section class="card check-card">
-      <label>이름</label>
-      <div class="link-row">
-        <input id="checkName" placeholder="예: 김민준" autocomplete="name" />
-        <button class="btn primary" id="checkBtn">결과 확인</button>
+    <section class="public">
+      <div class="card">
+        <h2>결과 확인</h2>
+        <p class="desc">이름은 관리자에게 등록된 이름과 동일하게 입력해주세요.</p>
+        <label class="label" for="nameInput">이름</label>
+        <div class="row">
+          <input id="nameInput" placeholder="예: 김민준" autocomplete="name" />
+          <button class="btn primary" id="checkBtn">결과확인</button>
+        </div>
+        <div class="notice" style="margin-top:12px">참여자 전체 명단은 공개되지 않습니다.</div>
       </div>
-      <p class="hint">결과 페이지에서는 참여자 전체 명단을 표시하지 않습니다.</p>
-    </section>
 
-    <section class="card final-card">
-      <div class="status-box" id="statusBox">
-        <span class="label-small">RESULT</span>
-        <strong>이름 입력</strong>
-        <p>결과 확인 버튼을 누르면 당첨 여부가 표시됩니다.</p>
+      <div class="card" style="margin-top:18px">
+        <div class="stage">
+          <div class="stageHead">
+            <div>
+              <div class="stageTitle" id="stageTitle">결과 확인</div>
+              <div class="stageSub">당첨 / 미당첨 확인</div>
+            </div>
+            <span class="pill">CHECK RESULT</span>
+          </div>
+          <div class="resultBox" id="resultBox">
+            <div class="resultLabel">RESULT</div>
+            <div class="statusText">이름 입력</div>
+            <div class="message">결과확인을 누르면 확인이 시작됩니다.</div>
+          </div>
+          <div class="confetti" id="confetti"></div>
+        </div>
       </div>
     </section>
+    <div class="footer">헥토헬스케어 이벤트 추첨</div>
   </main>
-
-  <script src="./result.js"></script>
+  <script src="result.js"></script>
 </body>
 </html>

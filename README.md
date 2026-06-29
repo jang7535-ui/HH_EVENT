@@ -1,14 +1,35 @@
-# HH_EVENT v2
+# HH_EVENT - 헥토헬스케어 이벤트 추첨
 
-GitHub Pages용 헥토헬스케어 이벤트 추첨 사이트입니다.
+GitHub Pages 전용 정적 추첨 사이트입니다.
 
 ## 파일 구조
-- index.html: 관리자 페이지
-- result.html: 참여자 결과 확인 페이지
-- style.css: 공통 디자인
-- admin.js: 관리자 추첨 로직
-- result.js: 결과 확인 로직
 
-## 관리자 PIN
-기본 PIN은 `hhc2026`입니다.
-변경하려면 `admin.js` 첫 줄의 `ADMIN_PIN` 값을 수정하세요.
+- `index.html` : 관리자 페이지
+- `result.html` : 참여자 결과 확인 페이지
+- `style.css` : 공통 스타일
+- `admin.js` : 관리자 추첨 로직
+- `result.js` : 참여자 결과 확인 로직
+
+## 기본 관리자 PIN
+
+`hhc2026`
+
+변경하려면 `admin.js` 상단의 `ADMIN_PIN` 값을 수정하세요.
+
+## 사용 방법
+
+1. GitHub 저장소 최상단에 모든 파일을 업로드합니다.
+2. Settings > Pages에서 `Deploy from a branch`, `main`, `/(root)`로 설정합니다.
+3. 관리자 페이지에서 PIN 입력 후 참여자를 등록합니다.
+4. 추첨 시작 후 생성된 결과 링크를 복사해 메일로 공유합니다.
+5. 참여자는 결과 링크에서 이름을 입력해 당첨/미당첨을 확인합니다.
+
+## 특징
+
+- 결과 페이지에는 참여자 전체 이름이 표시되지 않습니다.
+- 결과 링크에는 이름 원문이 아니라 해시값만 포함됩니다.
+- localStorage에 의존하지 않으므로 Chrome, Edge, 모바일에서도 같은 결과를 확인할 수 있습니다.
+
+## 제한사항
+
+GitHub Pages는 정적 호스팅입니다. 서버 DB가 없기 때문에 결과 링크 안에 검증 데이터가 포함됩니다. 참여자가 매우 많은 경우 URL이 길어질 수 있습니다.
