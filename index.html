@@ -1,13 +1,35 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>헥토헬스케어 이벤트 추첨 관리자</title><link rel="stylesheet" href="style.css"></head><body>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>헥토헬스케어 이벤트 추첨 | 관리자</title>
+<style>
+:root{--bg:#0f1117;--panel:#171a23;--panel2:#1f2430;--text:#f8fafc;--muted:#9aa3b2;--orange:#ff5a00;--line:#303749;--green:#22c55e;--red:#ef4444;--yellow:#facc15}*{box-sizing:border-box}body{margin:0;font-family:Malgun Gothic,Apple SD Gothic Neo,Segoe UI,sans-serif;background:radial-gradient(circle at top,#252b3a,#0f1117 45%,#090a0f);color:var(--text);min-height:100vh}.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 64px}.header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--orange),#ffb36b);box-shadow:0 0 26px rgba(255,90,0,.38)}h1{font-size:28px;margin:0 0 6px}.desc{margin:0;color:var(--muted);font-size:14px;line-height:1.6}.grid{display:grid;grid-template-columns:400px 1fr;gap:18px}.card{background:rgba(23,26,35,.94);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.28)}.card h2{font-size:18px;margin:0 0 12px}.label{display:block;margin:14px 0 7px;color:#d1d5db;font-weight:800;font-size:13px}textarea,input{width:100%;border:1px solid #3a4254;background:#0c0f16;color:var(--text);border-radius:14px;padding:12px 13px;font-size:14px;outline:none}textarea{min-height:210px;resize:vertical;line-height:1.55}input:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,90,0,.14)}.row{display:flex;gap:10px}.row>*{flex:1}.btn{border:0;border-radius:14px;padding:13px 15px;background:#2b3140;color:#fff;font-weight:900;cursor:pointer;white-space:nowrap}.btn.primary{background:linear-gradient(135deg,var(--orange),#ff7b22)}.btn.ghost{background:#11141c;border:1px solid var(--line)}.btn.green{background:linear-gradient(135deg,#16a34a,#22c55e)}.btn.blue{background:linear-gradient(135deg,#2563eb,#60a5fa)}.small{font-size:12px;color:var(--muted);line-height:1.5;margin-top:8px}.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#10141d;border-radius:999px;padding:7px 10px;color:#cbd5e1;font-size:12px;font-weight:800}.stage{position:relative;min-height:530px;background:linear-gradient(180deg,#121722,#0b0e15);border:1px solid var(--line);border-radius:22px;padding:18px;overflow:hidden}.titleLine{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.drawTitle{font-size:20px;font-weight:1000}.drawSub{font-size:13px;color:var(--muted)}.participants{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:9px;max-height:280px;overflow:auto;padding:4px 4px 14px}.chip{min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;border-radius:999px;background:#202636;border:1px solid #333b4e;color:#e5e7eb;font-weight:900;font-size:13px;transition:.12s}.chip.spin{background:linear-gradient(135deg,#f97316,#facc15);color:#111827;border-color:#fff;transform:scale(1.08);box-shadow:0 0 26px rgba(255,138,61,.75)}.chip.winner{background:linear-gradient(135deg,#22c55e,#86efac);color:#052e16;border-color:#dcfce7;transform:scale(1.14);box-shadow:0 0 32px rgba(34,197,94,.75)}.chip.loser{opacity:.35;filter:grayscale(.75)}.resultBox{margin-top:16px;border-radius:24px;border:1px solid #343b4e;background:linear-gradient(180deg,#1b2230,#11151f);padding:24px;text-align:center;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center}.resultLabel{font-size:13px;color:var(--muted);font-weight:900;letter-spacing:.12em}.winnerName{font-size:42px;line-height:1.15;font-weight:1000;margin:8px 0}.message{font-size:17px;line-height:1.5;color:#f8fafc;font-weight:800}.message.win{color:#bbf7d0}.links{display:grid;gap:10px;margin-top:12px}.copyline{display:flex;gap:8px}.copyline input{font-size:12px}.notice{padding:12px 14px;border:1px solid #374151;background:#111827;border-radius:14px;color:#cbd5e1;font-size:13px;line-height:1.5}.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}.confetti i{position:absolute;width:8px;height:14px;background:var(--orange);opacity:.9;animation:fall 1.7s linear forwards}@keyframes fall{to{transform:translateY(560px) rotate(680deg);opacity:0}}.hidden{display:none!important}.login{max-width:460px;margin:10vh auto}.footer{margin-top:18px;text-align:center;color:#6b7280;font-size:12px}@media(max-width:900px){.grid{grid-template-columns:1fr}.header{display:block}.winnerName{font-size:34px}}@media(max-width:640px){.wrap{padding:16px 12px 36px}.row,.copyline{flex-direction:column}.btn{width:100%}.card{border-radius:18px;padding:15px}textarea,input,.btn{font-size:16px}.participants{grid-template-columns:repeat(auto-fill,minmax(72px,1fr));max-height:230px}.winnerName{font-size:32px}}
+</style>
+</head>
+<body>
 <div class="wrap">
-  <header class="header"><div class="brand"><div class="logo"></div><div><h1>헥토헬스케어 이벤트 추첨</h1><p class="desc">관리자 페이지입니다. 참여자 등록 후 추첨을 실행하고 결과 링크/게시판용 발표 화면을 생성합니다.</p></div></div><span class="pill">ADMIN</span></header>
-  <div id="login" class="card" style="max-width:520px;margin:60px auto"><h2>관리자 로그인</h2><label class="label">관리자 PIN</label><input id="pin" type="password" placeholder="PIN 입력" onkeydown="if(event.key==='Enter')login()"><button class="btn primary" style="margin-top:12px" onclick="login()">입장</button><p class="small">기본 PIN: hhc2026</p></div>
+  <section id="login" class="login card">
+    <div class="brand"><div class="logo"></div><div><h1>헥토헬스케어 이벤트 추첨</h1><p class="desc">관리자 PIN을 입력하세요.</p></div></div>
+    <label class="label">관리자 PIN</label>
+    <input id="pin" type="password" placeholder="기본 PIN: hhc2026" onkeydown="if(event.key==='Enter')login()" />
+    <button class="btn primary" style="width:100%;margin-top:12px" onclick="login()">관리자 입장</button>
+    <p class="small">기본 PIN: <b>hhc2026</b></p>
+  </section>
+
   <main id="app" class="hidden">
+    <div class="header">
+      <div class="brand"><div class="logo"></div><div><h1>헥토헬스케어 이벤트 추첨</h1><p class="desc">참여자 등록, 추첨 실행, 결과 링크·발표 이미지·영상 저장을 관리합니다.</p></div></div>
+      <span class="pill">ADMIN</span>
+    </div>
     <div class="grid">
-      <section class="card">
-        <h2>추첨 설정</h2>
-        <label class="label">추첨 내용</label><input id="title" value="헥토헬스케어 이벤트 추첨">
-        <label class="label">참여자 명단 <span class="small">쉼표 또는 줄바꿈 구분</span></label><textarea id="names">김민준
+      <div class="card">
+        <h2>관리자 설정</h2>
+        <label class="label">추첨 내용</label>
+        <input id="title" value="헥토헬스케어 이벤트 추첨" />
+        <label class="label">참여자 명단 <span class="small">쉼표 또는 줄바꿈 구분</span></label>
+        <textarea id="names">김민준
 이서연
 박지훈
 최유진
@@ -17,18 +39,56 @@
 윤하늘
 오지훈
 한지민</textarea>
-        <div class="row"><div><label class="label">당첨 문구</label><input id="winMsg" value="축하합니다! 당첨되었습니다."></div><div><label class="label">미당첨 문구</label><input id="loseMsg" value="아쉽지만 이번에는 미당첨입니다."></div></div>
-        <div class="row" style="margin-top:14px"><button class="btn primary" onclick="draw()">추첨 시작</button><button class="btn ghost" onclick="resetAll()">초기화</button></div>
-        <div class="stack" style="margin-top:16px">
-          <div><label class="label">참여자 결과 확인 링크</label><div class="copyline"><input id="resultUrl" readonly><button class="btn ghost" onclick="copy('resultUrl')">복사</button></div></div>
-          <div><label class="label">게시판용 당첨자 발표 링크</label><div class="copyline"><input id="announceUrl" readonly><button class="btn ghost" onclick="copy('announceUrl')">복사</button></div><p class="small">게시판에 링크로 올리거나, 아래 버튼으로 발표 이미지를 저장해 첨부할 수 있습니다.</p></div>
-          <div class="row"><button class="btn green" onclick="openAnnounce()">발표 화면 열기</button><button class="btn ghost" onclick="downloadPng()">결과 이미지 PNG 저장</button><button class="btn ghost" onclick="downloadWebm()">짧은 영상 WebM 저장</button></div>
+        <div class="row">
+          <div><label class="label">당첨 문구</label><input id="winMsg" value="축하합니다! 당첨되었습니다." /></div>
+          <div><label class="label">미당첨 문구</label><input id="loseMsg" value="아쉽지만 이번 추첨에서는 미당첨입니다." /></div>
         </div>
-      </section>
-      <section class="card">
-        <div class="statusbar"><span class="pill" id="count">참여자 0명</span><span class="pill" id="winnerPill">당첨자 미선정</span></div>
-        <div class="stage"><div class="titleLine"><div><div class="drawTitle" id="stageTitle">헥토헬스케어 이벤트 추첨</div><div class="drawSub">관리자 추첨 화면</div></div><span class="pill">LIVE DRAW</span></div><div id="chips" class="participants"></div><div id="result" class="resultBox"><div class="resultLabel">RESULT</div><div class="winnerName">대기 중</div><div class="message">추첨을 시작하면 당첨자가 표시됩니다.</div></div><div id="confetti" class="confetti"></div></div>
-      </section>
+        <div class="row" style="margin-top:14px"><button class="btn primary" onclick="startDraw()">추첨 시작</button><button class="btn ghost" onclick="resetDraw()">초기화</button></div>
+        <div class="notice" style="margin-top:14px">추첨 완료 후 아래 링크와 저장 버튼이 활성화됩니다.</div>
+        <div id="shareArea" class="links hidden">
+          <label class="label">참여자 결과 페이지</label>
+          <div class="copyline"><input id="resultUrl" readonly><button class="btn ghost" onclick="copy('resultUrl')">복사</button></div>
+          <label class="label">게시판 공유용 발표 페이지</label>
+          <div class="copyline"><input id="announceUrl" readonly><button class="btn ghost" onclick="copy('announceUrl')">복사</button></div>
+          <div class="row"><button class="btn green" onclick="downloadPNG()">당첨 이미지 저장</button><button class="btn blue" onclick="downloadVideo()">발표 영상 저장</button></div>
+          <p class="small">영상 저장은 Chrome/Edge에서 WebM으로 저장됩니다. 게시판이 WebM을 지원하지 않으면 PNG 이미지를 사용하세요.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><span class="pill" id="countPill">참여자 0명</span><span class="pill" id="winnerPill">당첨자 미선정</span></div>
+        <div class="stage" id="stage">
+          <div class="titleLine"><div><div class="drawTitle" id="stageTitle">헥토헬스케어 이벤트 추첨</div><div class="drawSub">관리자 추첨 화면</div></div><span class="pill">LIVE DRAW</span></div>
+          <div class="participants" id="chips"></div>
+          <div class="resultBox" id="result"><div class="resultLabel">RESULT</div><div class="winnerName">대기 중</div><div class="message">추첨을 시작하면 최종 당첨자가 표시됩니다.</div></div>
+          <div class="confetti" id="confetti"></div>
+        </div>
+      </div>
     </div>
-  </main><canvas id="recordCanvas" width="1280" height="720"></canvas><div class="footer">GitHub Pages 전용 · 데이터는 결과 링크에 포함됩니다.</div>
-</div><script src="admin.js"></script></body></html>
+    <div class="footer">GitHub Pages 독립형 v5 · 결과 데이터는 링크에 포함됩니다.</div>
+  </main>
+</div>
+<script>
+const PIN='hhc2026';const $=id=>document.getElementById(id);let current=null, animating=false;
+function login(){if($('pin').value.trim()===PIN){$('login').classList.add('hidden');$('app').classList.remove('hidden');render()}else alert('PIN이 올바르지 않습니다.');}
+function names(){return [...new Set(($('names').value||'').split(/[\n\r,，、;\t]+/).map(v=>v.trim()).filter(Boolean))];}
+function data(){return {title:$('title').value.trim()||'헥토헬스케어 이벤트 추첨',names:names(),winner:current?.winner||'',winMsg:$('winMsg').value.trim()||'축하합니다! 당첨되었습니다.',loseMsg:$('loseMsg').value.trim()||'아쉽지만 이번 추첨에서는 미당첨입니다.',ts:Date.now()};}
+function enc(obj){return btoa(unescape(encodeURIComponent(JSON.stringify(obj)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function url(page,d){const base=location.href.split('/').slice(0,-1).join('/')+'/';return base+page+'?d='+enc(d);}
+function html(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function render(){const d=data();$('stageTitle').textContent=d.title;$('countPill').textContent='참여자 '+d.names.length+'명';$('winnerPill').textContent=d.winner?'당첨자: '+d.winner:'당첨자 미선정';$('chips').innerHTML=d.names.map(n=>'<div class="chip" data-name="'+html(n)+'">'+html(n)+'</div>').join('');if(d.winner){setResult(d.winner,d.winMsg,true);setLinks(d);}else setResult('대기 중','추첨을 시작하면 최종 당첨자가 표시됩니다.',null)}
+function setResult(name,msg,isWin){$('result').innerHTML='<div class="resultLabel">RESULT</div><div class="winnerName">'+html(name)+'</div><div class="message '+(isWin?'win':'')+'">'+html(msg)+'</div>';}
+function setLinks(d){$('shareArea').classList.remove('hidden');$('resultUrl').value=url('result.html',d);$('announceUrl').value=url('announce.html',d);}
+function clearChip(){document.querySelectorAll('.chip').forEach(c=>c.className='chip');}
+function animate(finalName,done){if(animating)return;animating=true;const chips=[...document.querySelectorAll('.chip')];clearChip();if(!chips.length){animating=false;done();return}let i=0,total=Math.min(70,Math.max(30,chips.length*3)),delay=35;function tick(){chips.forEach(c=>c.classList.remove('spin'));chips[i%chips.length].classList.add('spin');i++;delay+=4;if(i<total)setTimeout(tick,delay);else{chips.forEach(c=>c.classList.remove('spin'));chips.forEach(c=>c.dataset.name===finalName?c.classList.add('winner'):c.classList.add('loser'));animating=false;done();}}tick();}
+function startDraw(){const d=data();if(!d.names.length){alert('참여자 명단을 입력해주세요.');return}const winner=d.names[Math.floor(Math.random()*d.names.length)];current={...d,winner};render();setResult('추첨 중','후보자를 확인하고 있습니다.',null);animate(winner,()=>{setResult(winner,current.winMsg,true);setLinks(current);confetti();});}
+function resetDraw(){current=null;$('shareArea').classList.add('hidden');render();}
+['title','names','winMsg','loseMsg'].forEach(id=>setTimeout(() => $(id).addEventListener('input',render),0));
+async function copy(id){try{await navigator.clipboard.writeText($(id).value);alert('복사했습니다.')}catch(e){$(id).select();document.execCommand('copy');alert('복사했습니다.')}}
+function confetti(){const box=$('confetti');box.innerHTML='';for(let i=0;i<90;i++){const p=document.createElement('i');p.style.left=Math.random()*100+'%';p.style.top=(-30-Math.random()*160)+'px';p.style.background=['#ff5a00','#facc15','#22c55e','#60a5fa','#f472b6'][Math.floor(Math.random()*5)];p.style.animationDelay=(Math.random()*.45)+'s';box.appendChild(p)}setTimeout(()=>box.innerHTML='',2200)}
+function drawPosterFrame(ctx,w,h,d,step=1){const g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,'#1f2937');g.addColorStop(.55,'#0f1117');g.addColorStop(1,'#090a0f');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.fillStyle='#ff5a00';ctx.beginPath();ctx.roundRect(70,60,130,130,28);ctx.fill();ctx.fillStyle='rgba(255,90,0,.16)';ctx.beginPath();ctx.arc(w-110,110,220,0,Math.PI*2);ctx.fill();ctx.textAlign='center';ctx.fillStyle='#f8fafc';ctx.font='900 52px Malgun Gothic, sans-serif';ctx.fillText(d.title||'헥토헬스케어 이벤트 추첨',w/2,180);ctx.fillStyle='#9aa3b2';ctx.font='700 26px Malgun Gothic, sans-serif';ctx.fillText('당첨자 발표',w/2,245);ctx.save();ctx.translate(w/2,h/2+30);ctx.scale(1+step*.02,1+step*.02);ctx.fillStyle='#22c55e';ctx.beginPath();ctx.roundRect(-310,-95,620,190,48);ctx.fill();ctx.fillStyle='#052e16';ctx.font='1000 76px Malgun Gothic, sans-serif';ctx.fillText(d.winner||'당첨자',0,25);ctx.restore();ctx.fillStyle='#bbf7d0';ctx.font='800 30px Malgun Gothic, sans-serif';ctx.fillText(d.winMsg||'축하합니다! 당첨되었습니다.',w/2,h-150);ctx.fillStyle='#6b7280';ctx.font='600 20px Malgun Gothic, sans-serif';ctx.fillText('Hecto Healthcare Event',w/2,h-80);}
+function downloadPNG(){if(!current?.winner){alert('먼저 추첨을 진행해주세요.');return}const c=document.createElement('canvas');c.width=1280;c.height=720;const ctx=c.getContext('2d');drawPosterFrame(ctx,c.width,c.height,current,1);const a=document.createElement('a');a.href=c.toDataURL('image/png');a.download='hecto_event_winner.png';a.click();}
+async function downloadVideo(){if(!current?.winner){alert('먼저 추첨을 진행해주세요.');return}const c=document.createElement('canvas');c.width=1280;c.height=720;const ctx=c.getContext('2d');if(!c.captureStream||!window.MediaRecorder){alert('이 브라우저는 영상 저장을 지원하지 않습니다. PNG 저장을 사용해주세요.');return}const stream=c.captureStream(30);const rec=new MediaRecorder(stream,{mimeType:MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm'});const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};rec.onstop=()=>{const blob=new Blob(chunks,{type:'video/webm'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hecto_event_winner.webm';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};rec.start();let frame=0,max=150;function loop(){drawPosterFrame(ctx,c.width,c.height,current,Math.sin(frame/8));frame++;if(frame<max)requestAnimationFrame(loop);else rec.stop();}loop();}
+if(CanvasRenderingContext2D.prototype.roundRect===undefined){CanvasRenderingContext2D.prototype.roundRect=function(x,y,w,h,r){this.moveTo(x+r,y);this.arcTo(x+w,y,x+w,y+h,r);this.arcTo(x+w,y+h,x,y+h,r);this.arcTo(x,y+h,x,y,r);this.arcTo(x,y,x+w,y,r);return this;}}
+</script>
+</body>
+</html>
