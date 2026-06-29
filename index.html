@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>헥토헬스케어 이벤트 추첨 | 관리자</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">H</div>
+      <div>
+        <h1>헥토헬스케어 이벤트 추첨</h1>
+        <p>관리자 전용 · 참여자 등록, 추첨 실행, 결과 링크 생성</p>
+      </div>
+    </div>
+    <div class="badge">Admin v2</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel settings">
+      <h2>관리자 설정</h2>
+      <label>관리자 PIN</label>
+      <input id="pin" type="password" value="hhc2026" />
+      <p class="hint">기본 PIN: hhc2026 · 필요 시 코드에서 변경 가능</p>
+
+      <label>추첨명</label>
+      <input id="eventTitle" value="헥토헬스케어 이벤트 추첨" />
+
+      <label>참여자 명단</label>
+      <textarea id="participants" spellcheck="false" placeholder="홍길동, 김철수, 이영희 또는 줄바꿈 입력">김민준
+이서연
+박지훈
+최유진
+정현우
+강민지
+조성민
+윤하늘
+오지훈
+한지민</textarea>
+      <p class="hint">쉼표, 줄바꿈, 탭으로 구분됩니다. 중복 이름은 자동 제거됩니다.</p>
+
+      <div class="two">
+        <div>
+          <label>당첨 문구</label>
+          <input id="winMsg" value="축하합니다! 당첨되었습니다." />
+        </div>
+        <div>
+          <label>미당첨 문구</label>
+          <input id="loseMsg" value="아쉽지만 이번 추첨에서는 미당첨입니다." />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="primary" id="drawBtn">추첨 시작</button>
+        <button class="ghost" id="resetBtn">초기화</button>
+      </div>
+
+      <div class="linkBox">
+        <label>참여자 결과 페이지 링크</label>
+        <div class="copyrow">
+          <input id="resultUrl" readonly placeholder="추첨 후 생성됩니다" />
+          <button id="copyBtn">복사</button>
+        </div>
+        <p class="hint">GitHub Pages 배포 후 생성된 링크를 메일 하이퍼링크로 사용하세요.</p>
+      </div>
+    </section>
+
+    <section class="panel draw">
+      <div class="stats">
+        <span id="count">참여자 0명</span>
+        <span id="winnerStatus">당첨자 미선정</span>
+      </div>
+      <div class="stage">
+        <div class="stageHead">
+          <div>
+            <div class="eyebrow">LIVE DRAW</div>
+            <h2 id="stageTitle">헥토헬스케어 이벤트 추첨</h2>
+          </div>
+          <span class="secure">공정 랜덤</span>
+        </div>
+        <div id="chips" class="chips"></div>
+        <div id="result" class="resultCard idle">
+          <div class="label">RESULT</div>
+          <div class="big">대기 중</div>
+          <div class="msg">참여자를 등록하고 추첨을 시작하세요.</div>
+        </div>
+        <div id="confetti" class="confetti"></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="guide panel">
+    <h2>GitHub Pages 업로드 파일</h2>
+    <p><b>index.html</b>, <b>result.html</b>, <b>assets/style.css</b>, <b>assets/app.js</b> 전체를 저장소에 업로드하세요.</p>
+  </section>
+</div>
+<script src="assets/app.js"></script>
+<script>LotteryAdmin.init();</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>헥토헬스케어 이벤트 추첨 | 결과 확인</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="public">
+<div class="app publicApp">
+  <header class="topbar publicTop">
+    <div class="brand">
+      <div class="logo">H</div>
+      <div>
+        <h1 id="publicTitle">헥토헬스케어 이벤트 추첨</h1>
+        <p>본인 이름을 입력하여 결과를 확인하세요.</p>
+      </div>
+    </div>
+    <div class="badge">Result</div>
+  </header>
+
+  <main class="publicLayout">
+    <section class="panel checkPanel">
+      <h2>결과 확인</h2>
+      <p class="hint">참여자 전체 명단은 공개되지 않습니다.</p>
+      <label>이름</label>
+      <div class="copyrow inputrow">
+        <input id="checkName" autocomplete="name" placeholder="예: 김민준" />
+        <button class="primary" id="checkBtn">결과확인</button>
+      </div>
+      <div class="notice">관리자 페이지로 이동할 수 없는 참여자 전용 화면입니다.</div>
+    </section>
+
+    <section class="panel publicStage">
+      <div class="stage">
+        <div class="stageHead">
+          <div>
+            <div class="eyebrow">CHECK RESULT</div>
+            <h2 id="resultEventTitle">결과 확인</h2>
+          </div>
+          <span class="secure">Private</span>
+        </div>
+        <div id="toggleBox" class="resultCard idle largeOnly">
+          <div class="label">RESULT</div>
+          <div class="big">이름 입력</div>
+          <div class="msg">결과확인을 누르면 당첨 여부가 표시됩니다.</div>
+        </div>
+        <div id="publicConfetti" class="confetti"></div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="assets/app.js"></script>
+<script>LotteryResult.init();</script>
+</body>
+</html>
