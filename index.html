@@ -1,46 +1,13 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>헥토헬스케어 이벤트 추첨 | 관리자</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="wrap">
-    <header class="top">
-      <div class="brand">
-        <div class="logo">🎁</div>
-        <div>
-          <div class="eyebrow">ADMIN PAGE</div>
-          <h1>헥토헬스케어 이벤트 추첨</h1>
-          <p class="desc">관리자 전용 · 참여자 등록, 추첨 실행, 결과 링크 생성</p>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="result.html" target="_blank" rel="noopener">참여자 페이지</a>
-        <button type="button" id="resetAllBtn">전체 초기화</button>
-      </nav>
-    </header>
-
-    <section id="lockView" class="card lock">
-      <h2>관리자 인증</h2>
-      <p class="desc">관리자 PIN을 입력해야 추첨 설정 화면으로 이동합니다.</p>
-      <label class="label" for="pinInput">관리자 PIN</label>
-      <input id="pinInput" type="password" placeholder="기본 PIN: hhc2026" autocomplete="off" />
-      <button class="btn primary" id="loginBtn" style="margin-top:12px">관리자 페이지 열기</button>
-      <p class="hint">기본 PIN은 <b>hhc2026</b>입니다. 필요 시 <code>admin.js</code>의 <b>ADMIN_PIN</b> 값을 변경하세요.</p>
-    </section>
-
-    <section id="adminView" class="hidden">
-      <div class="grid">
-        <aside class="card">
-          <h2>관리자 설정</h2>
-          <label class="label" for="eventTitle">추첨명</label>
-          <input id="eventTitle" value="헥토헬스케어 이벤트 추첨" />
-
-          <label class="label" for="names">참여자 명단</label>
-          <textarea id="names" placeholder="김민준, 이서연, 박지훈&#10;또는 줄바꿈으로 입력">김민준
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>헥토헬스케어 이벤트 추첨 관리자</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="wrap">
+  <header class="header"><div class="brand"><div class="logo"></div><div><h1>헥토헬스케어 이벤트 추첨</h1><p class="desc">관리자 페이지입니다. 참여자 등록 후 추첨을 실행하고 결과 링크/게시판용 발표 화면을 생성합니다.</p></div></div><span class="pill">ADMIN</span></header>
+  <div id="login" class="card" style="max-width:520px;margin:60px auto"><h2>관리자 로그인</h2><label class="label">관리자 PIN</label><input id="pin" type="password" placeholder="PIN 입력" onkeydown="if(event.key==='Enter')login()"><button class="btn primary" style="margin-top:12px" onclick="login()">입장</button><p class="small">기본 PIN: hhc2026</p></div>
+  <main id="app" class="hidden">
+    <div class="grid">
+      <section class="card">
+        <h2>추첨 설정</h2>
+        <label class="label">추첨 내용</label><input id="title" value="헥토헬스케어 이벤트 추첨">
+        <label class="label">참여자 명단 <span class="small">쉼표 또는 줄바꿈 구분</span></label><textarea id="names">김민준
 이서연
 박지훈
 최유진
@@ -50,60 +17,18 @@
 윤하늘
 오지훈
 한지민</textarea>
-          <p class="hint">쉼표, 줄바꿈, 탭으로 구분됩니다. 중복 이름은 자동 제거됩니다.</p>
-
-          <div class="row">
-            <div>
-              <label class="label" for="winMsg">당첨 문구</label>
-              <input id="winMsg" value="축하합니다! 당첨되었습니다." />
-            </div>
-            <div>
-              <label class="label" for="loseMsg">미당첨 문구</label>
-              <input id="loseMsg" value="아쉽지만 이번 추첨에서는 미당첨입니다." />
-            </div>
-          </div>
-
-          <div class="row" style="margin-top:14px">
-            <button class="btn primary" id="drawBtn">추첨 시작</button>
-            <button class="btn ghost" id="clearDrawBtn">당첨자 초기화</button>
-          </div>
-
-          <div class="divider"></div>
-          <label class="label" for="resultLink">참여자 결과 링크</label>
-          <div class="copyline">
-            <input id="resultLink" readonly placeholder="추첨 후 결과 링크가 생성됩니다" />
-            <button class="btn ghost" id="copyBtn">복사</button>
-          </div>
-          <p class="hint">참여자 이름 원문은 결과 링크에 포함되지 않습니다. 참여자 페이지에서도 전체 명단은 표시되지 않습니다.</p>
-        </aside>
-
-        <section class="card">
-          <div class="statusbar">
-            <span class="pill" id="countPill">참여자 0명</span>
-            <span class="pill" id="winnerPill">당첨자 미선정</span>
-            <span class="pill">공정 추첨: crypto random</span>
-          </div>
-          <div class="stage">
-            <div class="stageHead">
-              <div>
-                <div class="stageTitle" id="stageTitle">헥토헬스케어 이벤트 추첨</div>
-                <div class="stageSub">관리자 추첨 화면</div>
-              </div>
-              <span class="pill">LIVE DRAW</span>
-            </div>
-            <div class="participants" id="participants"></div>
-            <div class="resultBox" id="adminResult">
-              <div class="resultLabel">RESULT</div>
-              <div class="winnerName">대기 중</div>
-              <div class="message">추첨을 시작하면 당첨자가 표시됩니다.</div>
-            </div>
-            <div class="confetti" id="confetti"></div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <div class="footer">GitHub Pages 전용 v3 · 브라우저 독립형 결과 링크</div>
-  </main>
-  <script src="admin.js"></script>
-</body>
-</html>
+        <div class="row"><div><label class="label">당첨 문구</label><input id="winMsg" value="축하합니다! 당첨되었습니다."></div><div><label class="label">미당첨 문구</label><input id="loseMsg" value="아쉽지만 이번에는 미당첨입니다."></div></div>
+        <div class="row" style="margin-top:14px"><button class="btn primary" onclick="draw()">추첨 시작</button><button class="btn ghost" onclick="resetAll()">초기화</button></div>
+        <div class="stack" style="margin-top:16px">
+          <div><label class="label">참여자 결과 확인 링크</label><div class="copyline"><input id="resultUrl" readonly><button class="btn ghost" onclick="copy('resultUrl')">복사</button></div></div>
+          <div><label class="label">게시판용 당첨자 발표 링크</label><div class="copyline"><input id="announceUrl" readonly><button class="btn ghost" onclick="copy('announceUrl')">복사</button></div><p class="small">게시판에 링크로 올리거나, 아래 버튼으로 발표 이미지를 저장해 첨부할 수 있습니다.</p></div>
+          <div class="row"><button class="btn green" onclick="openAnnounce()">발표 화면 열기</button><button class="btn ghost" onclick="downloadPng()">결과 이미지 PNG 저장</button><button class="btn ghost" onclick="downloadWebm()">짧은 영상 WebM 저장</button></div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="statusbar"><span class="pill" id="count">참여자 0명</span><span class="pill" id="winnerPill">당첨자 미선정</span></div>
+        <div class="stage"><div class="titleLine"><div><div class="drawTitle" id="stageTitle">헥토헬스케어 이벤트 추첨</div><div class="drawSub">관리자 추첨 화면</div></div><span class="pill">LIVE DRAW</span></div><div id="chips" class="participants"></div><div id="result" class="resultBox"><div class="resultLabel">RESULT</div><div class="winnerName">대기 중</div><div class="message">추첨을 시작하면 당첨자가 표시됩니다.</div></div><div id="confetti" class="confetti"></div></div>
+      </section>
+    </div>
+  </main><canvas id="recordCanvas" width="1280" height="720"></canvas><div class="footer">GitHub Pages 전용 · 데이터는 결과 링크에 포함됩니다.</div>
+</div><script src="admin.js"></script></body></html>
